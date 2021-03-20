@@ -9,6 +9,16 @@ $mediumMargin: 2em;
 $smallMargin: 1em;
 $verySmallMargin: 0.5em;
 
+@mixin shadow(
+  $h-offset: 5px,
+  $v-offset: 10px,
+  $blur: 3px,
+  $spread: 3px,
+  $color: $dark,
+  $inset: inherit
+) {
+  box-shadow: $h-offset $v-offset $blur $spread $color $inset;
+}
 @mixin flex($dir: row, $jc: center, $ai: center) {
   display: flex;
   flex-direction: $dir;
@@ -68,12 +78,13 @@ nav a.nav-item:hover {
   object-fit: cover;
 }
 #slider > div.banner {
-  display: block;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
   width: 100%;
   height: 420px;
+  text-align: center;
+  @include flex(column, center, center);
 }
 #banner-life {
   background-image: url(../img/family.webp);
@@ -90,3 +101,52 @@ nav a.nav-item:hover {
 .large-text {
   font-size: $largeText;
 }
+.medium-text {
+  font-size: $mediumMargin;
+}
+.overlay {
+  background-color: $darkColor;
+  display: block;
+  height: 420px;
+  width: 100%;
+  opacity: 0.4;
+  position: absolute;
+  z-index: 9999;
+}
+
+// container
+
+.container {
+  width: calc(100% - 2 * #{$largeMargin});
+  margin: $largeMargin auto;
+  @include flex(column, flex-start, center);
+}
+.container article {
+  margin-top: $largeMargin;
+  width: calc(80% - 2 * #{$mediumMargin});
+  @include flex(row, flex-start, flex-start);
+}
+.container article img {
+  width: 360px;
+}
+.container article div.para {
+  text-align: justify;
+  padding-left: $mediumMargin;
+}
+.container article div.para a.more {
+  color: $baseColor;
+  background-color: $darkColor;
+  text-decoration: none;
+  padding: $verySmallMargin $smallMargin;
+}
+.container article div.para a.more:hover {
+  text-decoration: none;
+  color: $white;
+}
+.card {
+  @include shadow(5px, 5px, 3px, 3px, $darkColor, inherit);
+  width: 240px;
+  padding: 5px;
+  margin: 5px;
+}
+//footer
