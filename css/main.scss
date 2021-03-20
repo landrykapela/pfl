@@ -1,0 +1,89 @@
+$darkColor: #020000;
+$baseColor: #ecdcb4;
+$white: #ffffff;
+$largeText: 4rem;
+$mediumText: 2rem;
+$smallText: 0.5rem;
+$largeMargin: 4em;
+$mediumMargin: 2em;
+$smallMargin: 1em;
+$verySmallMargin: 0.5em;
+
+@mixin flex($dir: row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+body {
+  margin: 0;
+  //   background-color: $baseColor;
+  color: $darkColor;
+  padding: 0;
+}
+
+header {
+  @include flex(column, flex-start, center);
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+}
+header .top-bar {
+  background-color: $darkColor;
+  @include flex(row, space-between, center);
+  margin: 0;
+  width: calc(100% - 2 * #{$verySmallMargin});
+  padding: $verySmallMargin;
+}
+header .top-bar img.logo {
+  width: 200px;
+}
+header .top-bar nav {
+  @include flex(row, space-evenly, center);
+  padding: $mediumMargin;
+}
+header .top-bar nav a.nav-item {
+  margin: $verySmallMargin $smallMargin;
+  padding: $verySmallMargin;
+}
+nav a.nav-item,
+nav a.nav-item:visited {
+  text-decoration: none;
+  color: $baseColor;
+}
+nav a.nav-item:hover {
+  text-decoration: none;
+  background-color: $baseColor;
+  color: $darkColor;
+}
+#slider {
+  @include flex(row, center, center);
+  width: 100%;
+  margin: 0 auto;
+}
+#slider .banner img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+#slider > div.banner {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  height: 420px;
+}
+#banner-life {
+  background-image: url(../img/family.webp);
+  background-color: blue;
+}
+#banner-medical {
+  background-image: url(../img/medical-insurance.webp);
+  background-color: red;
+}
+#banner-car {
+  background-image: url(../img/car-insurance.webp);
+  background-color: green;
+}

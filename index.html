@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>PFL Insurance Brokers</title>
+    <meta
+      name="description"
+      content="At PFL Insurance, we work hard to provide you with the best experience liasing with your insurer. We dedicate our resources just to make sure you get the best cover policy."
+    />
+    <meta name="author" content="Landry Kapela" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <link href="img/favicon.png" rel="icon" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="slick/slick.css" rel="stylesheet" />
+    <link href="slick/slick-theme.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <div>
+          <img class="logo" src="img/logo.webp" alt="PFL Insurance logo" />
+        </div>
+        <nav>
+          <a class="nav-item" href="">Home</a>
+          <a class="nav-item" href="about.html">About</a>
+          <a class="nav-item" href="services.html">Services</a>
+          <a class="nav-item" href="clients.html">Clients</a>
+          <a class="nav-item" href="contacts.html">Contacts</a>
+        </nav>
+      </div>
+      <div id="slider">
+        <div class="banner" id="banner-life">
+          <img src="img/family.webp" alt="Life insurance" />
+          <h1>Life Insurance</h1>
+        </div>
+        <div class="banner" id="banner-car">
+          <img src="img/car-insurance.webp" alt="car insurance" />
+          <h1>Motorvehicle Insurance</h1>
+        </div>
+        <div class="banner" id="banner-medical">
+          <!-- <img src="img/medical-insurance.webp" alt="medical insurance" /> -->
+          <h1>Medical Insurance</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container"><span class="large-text"></span></div>
+    <footer></footer>
+    <script type="text/javascript" src="slick/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="slick/jquery-migrate-1.2.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#slider").slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          speed: 500,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          arrows: true,
+          infinite: true,
+          fade: true,
+          cssEase: "ease",
+        });
+      });
+    </script>
+  </body>
+</html>
