@@ -1,5 +1,6 @@
 $darkColor: #020000;
 $baseColor: #ecdcb4;
+$baseColorTrans: #ecdcb4d8;
 $white: #ffffff;
 $largeText: 4rem;
 $mediumText: 2rem;
@@ -10,7 +11,7 @@ $smallMargin: 1em;
 $verySmallMargin: 0.5em;
 
 @mixin shadow(
-  $h-offset: 5px,
+  $h-offset: 10px,
   $v-offset: 10px,
   $blur: 3px,
   $spread: 3px,
@@ -25,14 +26,50 @@ $verySmallMargin: 0.5em;
   justify-content: $jc;
   align-items: $ai;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
-  //   background-color: $baseColor;
+  text-align: center;
   color: $darkColor;
   padding: 0;
+  font-family: "Poiret-one", sans-serif;
+}
+.active {
+  display: block;
+}
+.hidden {
+  display: none !important;
 }
 
+.controls {
+  margin: 0 auto;
+  width: 90%;
+  position: relative;
+  @include flex(row, space-between, center);
+
+  height: 500px;
+}
+.controls #control-left,
+.controls #control-right {
+  font-size: larger;
+  cursor: pointer;
+  background-color: $baseColor;
+  font-weight: bold;
+  color: $darkColor;
+  padding: $verySmallMargin;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  z-index: 10000;
+}
+.controls #control-left:hover,
+.controls #control-right:hover {
+  background-color: $darkColor;
+  color: $baseColor;
+}
 header {
   @include flex(column, flex-start, center);
   width: 100%;
@@ -42,12 +79,13 @@ header {
 header .top-bar {
   background-color: $darkColor;
   @include flex(row, space-between, center);
-  margin: 0;
-  width: calc(100% - 2 * #{$verySmallMargin});
+  margin: 0 auto;
+  width: calc(100% - (2 * #{$verySmallMargin}));
   padding: $verySmallMargin;
 }
 header .top-bar img.logo {
   width: 200px;
+  height: 120px;
 }
 header .top-bar nav {
   @include flex(row, space-evenly, center);
@@ -56,13 +94,14 @@ header .top-bar nav {
 header .top-bar nav a.nav-item {
   margin: $verySmallMargin $smallMargin;
   padding: $verySmallMargin;
+  font-weight: bold;
 }
 nav a.nav-item,
 nav a.nav-item:visited {
   text-decoration: none;
   color: $baseColor;
 }
-nav a.nav-item:hover {
+.top-bar nav a.nav-item:hover {
   text-decoration: none;
   background-color: $baseColor;
   color: $darkColor;
@@ -70,33 +109,89 @@ nav a.nav-item:hover {
 #slider {
   @include flex(row, center, center);
   width: 100%;
+  height: 500px;
   margin: 0 auto;
+  position: absolute;
+  top: 140px;
+  // animation: slideshows;
+  // animation-duration: 60s;
+  // // animation-timing-function: linear;
+  // animation-timing-function: ease-in;
+  // animation-fill-mode: backwards;
+  // animation-delay: 0s;
+  // animation-iteration-count: infinite;
+  // background-image: url(../img/family.webp);
 }
 #slider .banner img {
+  height: 500px;
   width: 100%;
-  height: 420px;
   object-fit: cover;
 }
 #slider > div.banner {
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
   width: 100%;
-  height: 420px;
+  height: 500px;
   text-align: center;
+  // display: hidden;
   @include flex(column, center, center);
 }
+#slider > div.banner .content {
+  @include flex(column, space-evenly, center);
+  z-index: 10000;
+  border: 1px solid $white;
+  color: $white;
+  height: 300px;
+  width: 60%;
+  padding: $smallMargin $mediumMargin;
+  font-weight: bold;
+}
+#slider > div.banner .content:hover {
+  background-color: $baseColorTrans;
+  color: $darkColor;
+}
+#slider > div.banner .content:hover .clear-button,
+.clear-button:hover {
+  background-color: $darkColor;
+  color: $baseColor;
+}
+.clear-button {
+  border: 1px solid $white;
+  padding: $verySmallMargin $smallMargin;
+  color: $white;
+  cursor: pointer;
+}
+
 #banner-life {
   background-image: url(../img/family.webp);
-  background-color: blue;
+  // background-color: blue;
+  // animation: slide 0.2s linear 3s forwards;
 }
 #banner-medical {
   background-image: url(../img/medical-insurance.webp);
-  background-color: red;
+  // background-color: red;
+  // animation: slide 0.2s linear 3s forwards;
 }
 #banner-car {
   background-image: url(../img/car-insurance.webp);
-  background-color: green;
+  // background-color: green;
+  // animation: slide 0.2s linear 3s forwards;
+}
+#banner-property {
+  background-image: url(../img/property-insurance.webp);
+}
+.base-color-bg {
+  background-color: $baseColor;
+  color: $darkColor;
+}
+.dark-color-bg {
+  background-color: $darkColor;
+  color: $baseColor;
+}
+.bold {
+  font-weight: bold;
 }
 .large-text {
   font-size: $largeText;
@@ -104,14 +199,40 @@ nav a.nav-item:hover {
 .medium-text {
   font-size: $mediumMargin;
 }
+.small-text {
+  font-size: $smallText;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-dark {
+  color: $darkColor !important;
+}
+.text-light {
+  color: $baseColor !important;
+}
 .overlay {
   background-color: $darkColor;
   display: block;
-  height: 420px;
+  height: 500px;
   width: 100%;
   opacity: 0.4;
   position: absolute;
   z-index: 9999;
+}
+
+//sections
+section {
+  padding: $mediumMargin 0;
+
+  margin: 0 auto;
+  text-align: center;
 }
 
 // container
@@ -119,7 +240,8 @@ nav a.nav-item:hover {
 .container {
   width: calc(100% - 2 * #{$largeMargin});
   margin: $largeMargin auto;
-  @include flex(column, flex-start, center);
+  @include flex(row, space-evenly, center);
+  flex-wrap: wrap;
 }
 .container article {
   margin-top: $largeMargin;
@@ -143,10 +265,184 @@ nav a.nav-item:hover {
   text-decoration: none;
   color: $white;
 }
+.card-overlay,
 .card {
-  @include shadow(5px, 5px, 3px, 3px, $darkColor, inherit);
-  width: 240px;
-  padding: 5px;
-  margin: 5px;
+  height: 300px;
 }
-//footer
+.card {
+  @include flex(column, space-evenly, center);
+  margin: $mediumMargin auto;
+  background-color: $baseColor;
+  width: 360px;
+  box-shadow: 5px, 10px, 3px, 5px, $darkColor, initial !important;
+}
+.card > p,
+.card > div.clear-button {
+  z-index: 500;
+  opacity: 1;
+  font-weight: bold;
+}
+.card > p {
+  color: $baseColor;
+}
+.card > div.clear-button:hover {
+  background-color: $baseColor;
+  color: $darkColor;
+}
+.card-overlay {
+  z-index: 100;
+  width: 360px;
+  position: absolute;
+  background-color: $darkColor;
+  opacity: 0.4;
+}
+.card > div.data {
+  opacity: 0;
+}
+.card:hover .card-overlay,
+.card:hover .card > p,
+.card:hover .card > div.clear-button {
+  opacity: 1;
+  animation: stretchRight 0.2s linear 0s 1 forwards;
+}
+.card:hover .card > div.data {
+  opacity: 1;
+}
+#card-accident,
+#fire-accident,
+#health-insurance,
+#loan-insurance,
+#life-insurance,
+#business-insurance {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#business-insurance {
+  background-image: url(../img/business.webp);
+}
+#life-insurance {
+  background-image: url(../img/life-insurance.webp);
+}
+#loan-insurance {
+  background-image: url(../img/loan-insurance.webp);
+}
+#card-accident {
+  background-image: url(../img/accident.webp);
+}
+#fire-accident {
+  background-image: url(../img/fire-insurance.webp);
+}
+#health-insurance {
+  background-image: url(../img/health-insurance.webp);
+}
+//forms
+form {
+  width: 60%;
+  border: 1px solid $darkColor;
+  padding: $mediumMargin;
+}
+.form-group {
+  @include flex(column, flex-start, flex-start);
+  width: 90%;
+}
+.form-group label {
+  margin: $smallMargin 0;
+  font-weight: bold;
+}
+.form-group .form-control {
+  width: calc(100% - #{$smallMargin});
+  padding: $verySmallMargin;
+}
+.form-group > select.form-control option {
+  padding: $verySmallMargin;
+}
+.form-group input[type="submit"] {
+  margin: $smallMargin 0;
+  padding: $verySmallMargin $smallMargin;
+  border: 0px;
+  cursor: pointer;
+}
+.form-group input[type="submit"]:hover {
+  background-color: $baseColor;
+  border: 1px solid $darkColor;
+  color: $darkColor;
+}
+// footer
+footer {
+  @include flex(row, space-evenly, flex-start);
+  padding: $mediumMargin;
+  width: calc(100% - (2 * #{$mediumMargin}));
+  background-color: $darkColor;
+  color: $baseColor;
+  flex-wrap: nowrap;
+}
+footer > div {
+  // border: 1px solid red;
+  // width: auto;
+}
+footer nav {
+  @include flex(column, flex-start, flex-start);
+}
+footer nav a.nav-item {
+  padding: $verySmallMargin;
+}
+footer nav a.nav-item:hover {
+  text-decoration: none;
+  color: $white;
+}
+
+//animations
+@keyframes stretchRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 360px;
+  }
+}
+@keyframes slideshows {
+  0% {
+    background-image: url("../img/car-insurance.webp");
+  }
+  35% {
+    background-image: url("../img/property-insurance.webp");
+  }
+  70% {
+    background-image: url("../img/family.webp");
+  }
+  100% {
+    background-image: url("../img/medical-insurance.webp");
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+    display: none;
+    // margin-left: 0;
+  }
+  to {
+    // margin-left: -99999px;
+    opacity: 1;
+    display: flex;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+    display: flex;
+    // margin-left: 0;
+  }
+  to {
+    // margin-left: -99999px;
+    opacity: 0;
+    display: none;
+  }
+}
+
+//font
+@font-face {
+  font-family: Poiret-one;
+  src: url(PoiretOne-Regular.ttf);
+  // font-weight: bold;
+  font-display: swap;
+}
