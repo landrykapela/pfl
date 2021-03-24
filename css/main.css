@@ -228,6 +228,16 @@ nav a.nav-item:visited {
   color: #ecdcb4 !important;
 }
 
+.text-underline-base {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ecdcb4;
+}
+
+.text-underline-dark {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #020000;
+}
+
 .overlay {
   background-color: #020000;
   display: block;
@@ -238,10 +248,57 @@ nav a.nav-item:visited {
   z-index: 9999;
 }
 
+.accordion {
+  margin: 0.5em auto;
+  width: 80%;
+  border: 1px solid #ecdcb4;
+}
+
+.accordion_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.accordion_body {
+  height: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  display: block;
+}
+
+ul li {
+  list-style-type: square;
+}
+
+.accordion_expand_button {
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.accordion-expand {
+  animation: expandAccordion 0.2s linear 0s 1 forwards !important;
+  padding: 0.5em;
+}
+
 section {
   padding: 2em 0;
   margin: 0 auto;
   text-align: center;
+}
+
+section > p.intro,
+section > p {
+  font-size: 2rem;
+  margin: 0 auto;
+  width: 60%;
+  padding: 1em;
 }
 
 .container {
@@ -295,7 +352,6 @@ section {
   justify-content: space-evenly;
   align-items: center;
   margin: 2em auto;
-  background-color: #ecdcb4;
   width: 360px;
   box-shadow: 5px, 10px, 3px, 5px, #020000, initial !important;
 }
@@ -442,6 +498,14 @@ footer nav a.nav-item:hover {
   color: #ffffff;
 }
 
+@keyframes expandAccordion {
+  from {
+    height: 0;
+  }
+  to {
+    height: auto;
+  }
+}
 @keyframes stretchRight {
   from {
     width: 0;

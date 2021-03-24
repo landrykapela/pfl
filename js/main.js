@@ -1,7 +1,3 @@
-const slider = document.querySelector("#slider");
-const slides = Array.from(slider.children);
-const controlLeft = document.querySelector("#control-left");
-const controlRight = document.querySelector("#control-right");
 const moveNext = () => {
   let currentIndex = 0;
   let nextIndex = currentIndex + 1;
@@ -39,18 +35,6 @@ const movePrevious = () => {
   slides[nextIndex].classList.add("active");
 };
 
-if (controlRight) {
-  controlRight.addEventListener("click", () => {
-    console.log("moving right");
-    moveNext();
-  });
-}
-if (controlLeft) {
-  controlLeft.addEventListener("click", () => {
-    movePrevious();
-  });
-}
-
 const slideShow = (loop) => {
   let count = 1;
   if (loop) {
@@ -67,5 +51,75 @@ const slideShow = (loop) => {
   }
 };
 window.addEventListener("load", () => {
-  slideShow(false);
+  if (window.location.pathname == "/index.html") {
+    const slider = document.querySelector("#slider");
+    const slides = Array.from(slider.children);
+    const controlLeft = document.querySelector("#control-left");
+    const controlRight = document.querySelector("#control-right");
+    slideShow(false);
+
+    if (controlRight) {
+      controlRight.addEventListener("click", () => {
+        console.log("moving right");
+        moveNext();
+      });
+    }
+    if (controlLeft) {
+      controlLeft.addEventListener("click", () => {
+        movePrevious();
+      });
+    }
+  }
+
+  if (window.location.pathname == "/services.html") {
+    const btnExpandGeneralAccordion = document.querySelector(
+      "#expand_accordion_general"
+    );
+    const btnExpandMedicalAccordion = document.querySelector(
+      "#expand_accordion_medical"
+    );
+    const btnExpandLifeAccordion = document.querySelector(
+      "#expand_accordion_life"
+    );
+    if (btnExpandLifeAccordion) {
+      btnExpandLifeAccordion.addEventListener("click", (e) => {
+        const accordion_body = document.querySelector("#accordion_body_life");
+        if (e.target.textContent == "+") {
+          accordion_body.classList.add("accordion-expand");
+          e.target.textContent = "-";
+        } else {
+          accordion_body.classList.remove("accordion-expand");
+          e.target.textContent = "+";
+        }
+      });
+    }
+    if (btnExpandGeneralAccordion) {
+      btnExpandGeneralAccordion.addEventListener("click", (e) => {
+        const accordion_body = document.querySelector(
+          "#accordion_body_general"
+        );
+        if (e.target.textContent == "+") {
+          accordion_body.classList.add("accordion-expand");
+          e.target.textContent = "-";
+        } else {
+          accordion_body.classList.remove("accordion-expand");
+          e.target.textContent = "+";
+        }
+      });
+    }
+    if (btnExpandMedicalAccordion) {
+      btnExpandMedicalAccordion.addEventListener("click", (e) => {
+        const accordion_body = document.querySelector(
+          "#accordion_body_medical"
+        );
+        if (e.target.textContent == "+") {
+          accordion_body.classList.add("accordion-expand");
+          e.target.textContent = "-";
+        } else {
+          accordion_body.classList.remove("accordion-expand");
+          e.target.textContent = "+";
+        }
+      });
+    }
+  }
 });

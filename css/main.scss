@@ -217,6 +217,14 @@ nav a.nav-item:visited {
 .text-light {
   color: $baseColor !important;
 }
+.text-underline-base {
+  padding-bottom: $verySmallMargin;
+  border-bottom: 1px solid $baseColor;
+}
+.text-underline-dark {
+  padding-bottom: $verySmallMargin;
+  border-bottom: 1px solid $darkColor;
+}
 .overlay {
   background-color: $darkColor;
   display: block;
@@ -226,7 +234,37 @@ nav a.nav-item:visited {
   position: absolute;
   z-index: 9999;
 }
-
+//accordions
+.accordion {
+  margin: $verySmallMargin auto;
+  width: 80%;
+  border: 1px solid $baseColor;
+}
+.accordion_heading {
+  @include flex(row, space-between, center);
+  padding: $verySmallMargin;
+}
+.accordion_body {
+  height: 0;
+  overflow: hidden;
+  text-align: left;
+}
+ul {
+  list-style: none;
+  display: block;
+}
+ul li {
+  list-style-type: square;
+}
+.accordion_expand_button {
+  cursor: pointer;
+  font-weight: bolder;
+}
+//accordion animation
+.accordion-expand {
+  animation: expandAccordion 0.2s linear 0s 1 forwards !important;
+  padding: $verySmallMargin;
+}
 //sections
 section {
   padding: $mediumMargin 0;
@@ -234,7 +272,14 @@ section {
   margin: 0 auto;
   text-align: center;
 }
-
+section > p.intro,
+section > p {
+  font-size: $mediumText;
+  margin: 0 auto;
+  width: 60%;
+  // font-weight: bold;
+  padding: $smallMargin;
+}
 // container
 
 .container {
@@ -272,7 +317,6 @@ section {
 .card {
   @include flex(column, space-evenly, center);
   margin: $mediumMargin auto;
-  background-color: $baseColor;
   width: 360px;
   box-shadow: 5px, 10px, 3px, 5px, $darkColor, initial !important;
 }
@@ -392,6 +436,15 @@ footer nav a.nav-item:hover {
 }
 
 //animations
+@keyframes expandAccordion {
+  from {
+    height: 0;
+  }
+  to {
+    height: auto;
+    // overflow: scroll;
+  }
+}
 @keyframes stretchRight {
   from {
     width: 0;
