@@ -1,4 +1,5 @@
 <?php
+
 $subject = filter_var(trim($_POST['policy']),FILTER_SANITIZE_STRING);
 $name = filter_var(trim($_POST['name']),FILTER_SANITIZE_STRING);
 $value = isset($_POST['insurance_value']) ? filter_var(trim($_POST['name']),FILTER_SANITIZE_STRING) : "Not set";
@@ -22,13 +23,13 @@ $html =  '<!DOCTYPE html>
     <meta name="charset" content="utf-8" />
     <meta name="author" content="Landry Kapela" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://localhost:3000/img/favicon.png" rel="icon" />
+    <link href="https://pflinsurance.co.tz/img/favicon.png" rel="icon" />
     <link
-      href="http://localhost:3000/css/main.css"
+      href="https://pflinsurance.co.tz/css/main.css"
       rel="stylesheet"
     />
     <link
-      href="http://localhost:3000/css/mobile.css"
+      href="https://pflinsurance.co.tz/css/mobile.css"
       rel="stylesheet"
     />
   </head>
@@ -40,18 +41,18 @@ $html =  '<!DOCTYPE html>
         </div>
         <span id="menu-button" class="large-text">&darr;</span>
         <nav id="top-nav">
-          <a class="nav-item" href="http://localhost:3000/index.html">Home</a>
-          <a class="nav-item" href="http://localhost:3000/about.html">About</a>
-          <a class="nav-item" href="http://localhost:3000/products.html">Products</a>
-          <a class="nav-item active" href="http://localhost:3000/#home">Partners</a>
-          <a class="nav-item" href="http://localhost:3000/index.html#contact">Contacts</a>
-          <a class="nav-item focus" href="http://localhost:3000/order.html">Order Now</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html">Home</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/about.html">About</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/products.html">Products</a>
+          <a class="nav-item active" href="https://pflinsurance.co.tz/#home">Partners</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html#contact">Contacts</a>
+          <a class="nav-item focus" href="https://pflinsurance.co.tz/order.html">Order Now</a>
         </nav>
       </div>
     </header>
     <section>
       <span class="medium-text">New Order</span>
-      <p>Date: '.date('dd MM YYYY').'
+      <p>Date: '.date('d M Y').'
        <p class="medium-text">Hello,</p>
        <p>There is a new request for <b>'.$subject.'</b> order number: <b>'.$order_number.'</b>. Kindly attend to '.$name.'\'s request ASAP</p>
       <h3>Orignal Message:</h3>
@@ -65,11 +66,11 @@ $html =  '<!DOCTYPE html>
       <div>
         <p>Quick Links</p>
         <nav id="nav-bottom">
-          <a class="nav-item" href="http://localhost:3000/index.html#home">Home</a>
-          <a class="nav-item" href="http://localhost:3000/about.html">About</a>
-          <a class="nav-item" href="http://localhost:3000/products.html">Products</a>
-          <a class="nav-item" href="http://localhost:3000/partners.html">Partners</a>
-          <a class="nav-item" href="http://localhost:3000/order.html">Order Now</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html#home">Home</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/about.html">About</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/products.html">Products</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/partners.html">Partners</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/order.html">Order Now</a>
         </nav>
       </div>
       <div class="text-left">
@@ -83,9 +84,9 @@ $html =  '<!DOCTYPE html>
       <div>
         <p>Stay Connected</p>
         <nav>
-          <a class="nav-item" href="http://localhost:3000/https://instagram.com">Instagram</a>
-          <a class="nav-item" href="http://localhost:3000/https://twitter.com">Twitter</a>
-          <a class="nav-item" href="http://localhost:3000/https://linkedin.com">LinkedIn</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://instagram.com">Instagram</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://twitter.com">Twitter</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://linkedin.com">LinkedIn</a>
         </nav>
       </div>
     </footer>
@@ -107,13 +108,13 @@ $html2 =  '<!DOCTYPE html>
     <meta name="charset" content="utf-8" />
     <meta name="author" content="Landry Kapela" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://localhost:3000/img/favicon.png" rel="icon" />
+    <link href="https://pflinsurance.co.tz/img/favicon.png" rel="icon" />
     <link
-      href="http://localhost:3000/css/main.css"
+      href="https://pflinsurance.co.tz/css/main.css"
       rel="stylesheet"
     />
     <link
-      href="http://localhost:3000/css/mobile.css"
+      href="https://pflinsurance.co.tz/css/mobile.css"
       rel="stylesheet"
     />
   </head>
@@ -125,12 +126,12 @@ $html2 =  '<!DOCTYPE html>
         </div>
         <span id="menu-button" class="large-text">&darr;</span>
         <nav id="top-nav">
-          <a class="nav-item" href="http://localhost:3000/index.html">Home</a>
-          <a class="nav-item" href="http://localhost:3000/about.html">About</a>
-          <a class="nav-item" href="http://localhost:3000/products.html">Products</a>
-          <a class="nav-item active" href="http://localhost:3000/#home">Partners</a>
-          <a class="nav-item" href="http://localhost:3000/index.html#contact">Contacts</a>
-          <a class="nav-item focus" href="http://localhost:3000/order.html">Order Now</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html">Home</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/about.html">About</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/products.html">Products</a>
+          <a class="nav-item active" href="https://pflinsurance.co.tz/#home">Partners</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html#contact">Contacts</a>
+          <a class="nav-item focus" href="https://pflinsurance.co.tz/order.html">Order Now</a>
         </nav>
       </div>
     </header>
@@ -152,11 +153,11 @@ $html2 =  '<!DOCTYPE html>
       <div>
         <p>Quick Links</p>
         <nav id="nav-bottom">
-          <a class="nav-item" href="http://localhost:3000/index.html#home">Home</a>
-          <a class="nav-item" href="http://localhost:3000/about.html">About</a>
-          <a class="nav-item" href="http://localhost:3000/products.html">Products</a>
-          <a class="nav-item" href="http://localhost:3000/partners.html">Partners</a>
-          <a class="nav-item" href="http://localhost:3000/order.html">Order Now</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/index.html#home">Home</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/about.html">About</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/products.html">Products</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/partners.html">Partners</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/order.html">Order Now</a>
         </nav>
       </div>
       <div class="text-left">
@@ -170,9 +171,9 @@ $html2 =  '<!DOCTYPE html>
       <div>
         <p>Stay Connected</p>
         <nav>
-          <a class="nav-item" href="http://localhost:3000/https://instagram.com">Instagram</a>
-          <a class="nav-item" href="http://localhost:3000/https://twitter.com">Twitter</a>
-          <a class="nav-item" href="http://localhost:3000/https://linkedin.com">LinkedIn</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://instagram.com">Instagram</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://twitter.com">Twitter</a>
+          <a class="nav-item" href="https://pflinsurance.co.tz/https://linkedin.com">LinkedIn</a>
         </nav>
       </div>
     </footer>
@@ -192,6 +193,7 @@ mail($email,$subject,$html2,$headers);
 $result = array();
 $result['status'] = "Success";
 $result['message'] = "Message sent successfully";
+$result['input'] = $_POST['message'];
 echo json_encode($result);
 
 ?>

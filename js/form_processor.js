@@ -17,7 +17,7 @@ if (window.location.pathname == "/order.html") {
 
   //submit form
   const submitForm = (targetUrl, inputs) => {
-    fetch(targetUrl, { method: "post", data: inputs })
+    fetch(targetUrl, { method: "POST", body: inputs })
       .then((res) => res.json())
       .then((response) => {
         console.log("response: ", response);
