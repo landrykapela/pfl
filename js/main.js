@@ -1,7 +1,6 @@
-const moveNext = () => {
+const moveNext = (slides) => {
   let currentIndex = 0;
   let nextIndex = currentIndex + 1;
-  console.log("slides: ", slides);
   slides.forEach((slide, index) => {
     if (slide.classList.contains("active")) {
       currentIndex = index;
@@ -17,7 +16,7 @@ const moveNext = () => {
   slides[nextIndex].classList.add("active");
 };
 
-const movePrevious = () => {
+const movePrevious = (slides) => {
   let currentIndex = 0;
   let nextIndex = slides.length - 1;
   slides.forEach((slide, index) => {
@@ -35,16 +34,16 @@ const movePrevious = () => {
   slides[nextIndex].classList.add("active");
 };
 
-const slideShow = (loop) => {
+const slideShow = (slides, loop) => {
   let count = 1;
   if (loop) {
     setInterval(() => {
-      moveNext();
+      moveNext(slides);
     }, 10000);
   } else {
     setInterval(() => {
       if (count < 5) {
-        moveNext();
+        moveNext(slides);
         count++;
       } else clearInterval();
     }, 10000);
@@ -53,25 +52,28 @@ const slideShow = (loop) => {
 window.addEventListener("load", () => {
   if (window.location.pathname == "/index.html") {
     const slider = document.querySelector("#slider");
-    const slides = Array.from(slider.children);
+
     const controlLeft = document.querySelector("#control-left");
     const controlRight = document.querySelector("#control-right");
-    slideShow(false);
+    if (slider) {
+      const slides = Array.from(slider.children);
+      slideShow(slides, false);
 
-    if (controlRight) {
-      controlRight.addEventListener("click", () => {
-        console.log("moving right");
-        moveNext();
-      });
-    }
-    if (controlLeft) {
-      controlLeft.addEventListener("click", () => {
-        movePrevious();
-      });
+      if (controlRight) {
+        controlRight.addEventListener("click", () => {
+          console.log("moving right");
+          moveNext(slides);
+        });
+      }
+      if (controlLeft) {
+        controlLeft.addEventListener("click", () => {
+          movePrevious(slides);
+        });
+      }
     }
   }
 
-  if (window.location.pathname == "/services.html") {
+  if (window.location.pathname == "/products.html") {
     const btnExpandGeneralAccordion = document.querySelector(
       "#expand_accordion_general"
     );
