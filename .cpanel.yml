@@ -10,3 +10,4 @@ deployment:
     - /bin/cp about.html $DEPLOYPATH
     - /bin/cp products.html $DEPLOYPATH
     - /bin/cp partners.html $DEPLOYPATH
+    - /bin/cp order.html $DEPLOYPATH
