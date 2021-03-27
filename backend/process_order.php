@@ -122,7 +122,7 @@ $html2 =  '<!DOCTYPE html>
     <header>
       <div class="top-bar" id="home">
         <div>
-          <img class="logo" src="img/logo.webp" alt="PFL Insurance logo" />
+          <img class="logo" src="https://pflinsurance.co.tz/img/logo.webp" alt="PFL Insurance logo" />
         </div>
         <span id="menu-button" class="large-text">&darr;</span>
         <nav id="top-nav">
