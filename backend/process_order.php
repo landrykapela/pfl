@@ -5,7 +5,7 @@ $name = filter_var(trim($_POST['name']),FILTER_SANITIZE_STRING);
 $value = isset($_POST['insurance_value']) ? filter_var(trim($_POST['name']),FILTER_SANITIZE_STRING) : "Not set";
 $email = filter_var(trim($_POST['email']),FILTER_SANITIZE_EMAIL);
 $phone = filter_var(trim($_POST['phone']),FILTER_SANITIZE_STRING);
-$message = filter_var(trim($_POST['policy']),FILTER_SANITIZE_STRING);
+$message = filter_var(trim($_POST['message']),FILTER_SANITIZE_STRING);
 $order_number = time();
 
 $html =  '<!DOCTYPE html>
@@ -37,7 +37,7 @@ $html =  '<!DOCTYPE html>
     <header>
       <div class="top-bar" id="home">
         <div>
-          <img class="logo" src="img/logo.webp" alt="PFL Insurance logo" />
+          <img class="logo" src="https://pflinsurance.co.tz/img/logo.webp" alt="PFL Insurance logo" />
         </div>
         <span id="menu-button" class="large-text">&darr;</span>
         <nav id="top-nav">
@@ -136,8 +136,8 @@ $html2 =  '<!DOCTYPE html>
       </div>
     </header>
     <section>
-      <span class="medium-text">New Order</span>
-      <p>Date: '.date('dd MM YYYY').'
+    
+      <p>Date: '.date('d M Y').'
        <p class="medium-text">Dear '.$name.',</p>
        <p>We are happy to receive your order for <b>'.$subject.'</b>. Your order number: <b>'.$order_number.'</b> is being processed and we will get back to you ASAP</p>
        <p>Thank you for choosing PFL Insurance</p>
