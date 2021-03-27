@@ -125,3 +125,18 @@ window.addEventListener("load", () => {
     }
   }
 });
+
+//menu button
+const menuButton = document.querySelector("#menu-button");
+if (menuButton) {
+  menuButton.addEventListener("click", (e) => {
+    const nav = document.querySelector("#top-nav");
+    if (nav.classList.contains("accordion-expand")) {
+      e.target.innerHTML = "&darr;";
+      nav.classList.remove("accordion-expand");
+    } else {
+      nav.classList.add("accordion-expand");
+      e.target.innerHTML = "&uarr;";
+    }
+  });
+}

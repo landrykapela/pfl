@@ -1,15 +1,15 @@
-@media all and (min-width: 769px) {
+@media all and (max-width: 768px) {
   $darkColor: #020000;
   $baseColor: #ecdcb4;
   $baseColorTrans: #ecdcb4d8;
   $white: #ffffff;
-  $largeText: 4rem;
-  $mediumText: 2rem;
-  $smallText: 0.5rem;
-  $largeMargin: 4em;
-  $mediumMargin: 2em;
-  $smallMargin: 1em;
-  $verySmallMargin: 0.5em;
+  $largeText: 3rem;
+  $mediumText: 1.2rem;
+  $smallText: 0.75rem;
+  $largeMargin: 2em;
+  $mediumMargin: 1em;
+  $smallMargin: 0.75em;
+  $verySmallMargin: 0.4em;
 
   @mixin shadow(
     $h-offset: 10px,
@@ -52,8 +52,10 @@
 
     height: 500px;
   }
+  //   #menu-button,
   .controls #control-left,
-  .controls #control-right {
+  .controls #control-right,
+  .top-bar #menu-button {
     font-size: larger;
     cursor: pointer;
     background-color: $baseColor;
@@ -79,23 +81,32 @@
   }
   header .top-bar {
     background-color: $darkColor;
-    @include flex(row, space-between, center);
+    @include flex(column, space-between, center);
     margin: 0 auto;
     width: calc(100% - (2 * #{$verySmallMargin}));
-    padding: $verySmallMargin;
+    padding: 0 $verySmallMargin;
+    height: auto;
   }
   header .top-bar img.logo {
-    width: 200px;
-    height: 120px;
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
   }
   header .top-bar nav {
-    @include flex(row, space-evenly, center);
-    padding: $mediumMargin;
+    background-color: $darkColor;
+    width: 100%; //calc(100% - (2 * #{$mediumMargin}));
+    @include flex(column, space-evenly, center);
+    padding: 0; // $mediumMargin;
+    height: 0;
+    overflow: hidden;
+    z-index: 10000000;
+    margin-top: -0.1em;
   }
   header .top-bar nav a.nav-item {
-    margin: $verySmallMargin $smallMargin;
-    padding: $verySmallMargin;
+    // margin: $verySmallMargin $smallMargin;
+    padding: $smallMargin;
     font-weight: bold;
+    width: calc(100% - (2 * #{$smallMargin}));
   }
   nav a.nav-item,
   nav a.nav-item:visited {
@@ -107,8 +118,19 @@
     background-color: $baseColor;
     color: $darkColor;
   }
+  a.active {
+    background-color: $baseColor !important;
+    color: $darkColor !important;
+    font-weight: bolder;
+  }
   header .top-bar #menu-button {
-    display: none;
+    display: inline-block;
+    z-index: 99999999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: $smallMargin;
+    border: 1px solid $darkColor;
   }
   #slider {
     @include flex(row, center, center);
@@ -252,7 +274,7 @@
     height: 0;
     overflow: hidden;
     text-align: left;
-    padding: $verySmallMargin;
+    // padding: $verySmallMargin;
   }
   ul {
     list-style: none;
@@ -268,7 +290,7 @@
   //accordion animation
   .accordion-expand {
     animation: expandAccordion 0.2s linear 0s 1 forwards !important;
-    padding: $verySmallMargin;
+    // padding: $verySmallMargin;
   }
   //sections
   section {
@@ -299,7 +321,7 @@
     @include flex(row, flex-start, flex-start);
   }
   .container article img {
-    width: 360px;
+    width: 90%;
   }
   .container article div.para {
     text-align: justify;
@@ -317,12 +339,14 @@
   }
   .card-overlay,
   .card {
-    height: 300px;
+    height: auto;
+    min-height: 240px;
+    max-width: 494px;
   }
   .card {
     @include flex(column, space-evenly, center);
     margin: $mediumMargin auto;
-    width: 360px;
+    width: 100%; //calc(90% - (2 * #{$mediumMargin}));
     box-shadow: 5px, 10px, 3px, 5px, $darkColor, initial !important;
   }
   .card > p,
@@ -338,12 +362,13 @@
     background-color: $baseColor;
     color: $darkColor;
   }
-  .card-overlay {
+  .card > div.card-overlay {
     z-index: 100;
-    width: 360px;
     position: absolute;
     background-color: $darkColor;
-    opacity: 0.4;
+    opacity: 0.5;
+    width: 83% !important;
+    // left: 0;
   }
   .card > div.data {
     opacity: 0;
@@ -386,7 +411,7 @@
   }
   //forms
   form {
-    width: 60%;
+    width: 90%;
     border: 1px solid $darkColor;
     padding: $mediumMargin;
   }
@@ -418,16 +443,17 @@
   }
   // footer
   footer {
-    @include flex(row, space-evenly, flex-start);
+    @include flex(row, flex-start, flex-start);
     padding: $mediumMargin;
     width: calc(100% - (2 * #{$mediumMargin}));
     background-color: $darkColor;
     color: $baseColor;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   footer > div {
     // border: 1px solid red;
     // width: auto;
+    margin: $smallMargin;
   }
   footer nav {
     @include flex(column, flex-start, flex-start);
@@ -496,7 +522,14 @@
       display: none;
     }
   }
-
+  @keyframes stretchDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: auto;
+    }
+  }
   //font
   @font-face {
     font-family: Poiret-one;

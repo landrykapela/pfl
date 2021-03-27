@@ -1,4 +1,4 @@
-@media all and (min-width: 769px) {
+@media all and (max-width: 768px) {
   html {
     scroll-behavior: smooth;
   }
@@ -31,13 +31,14 @@
   }
 
   .controls #control-left,
-.controls #control-right {
+.controls #control-right,
+.top-bar #menu-button {
     font-size: larger;
     cursor: pointer;
     background-color: #ecdcb4;
     font-weight: bold;
     color: #020000;
-    padding: 0.5em;
+    padding: 0.4em;
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -64,31 +65,39 @@
   header .top-bar {
     background-color: #020000;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    width: calc(100% - (2 * 0.5em));
-    padding: 0.5em;
+    width: calc(100% - (2 * 0.4em));
+    padding: 0 0.4em;
+    height: auto;
   }
 
   header .top-bar img.logo {
-    width: 200px;
-    height: 120px;
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
   }
 
   header .top-bar nav {
+    background-color: #020000;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 2em;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: 10000000;
+    margin-top: -0.1em;
   }
 
   header .top-bar nav a.nav-item {
-    margin: 0.5em 1em;
-    padding: 0.5em;
+    padding: 0.75em;
     font-weight: bold;
+    width: calc(100% - (2 * 0.75em));
   }
 
   nav a.nav-item,
@@ -103,8 +112,20 @@ nav a.nav-item:visited {
     color: #020000;
   }
 
+  a.active {
+    background-color: #ecdcb4 !important;
+    color: #020000 !important;
+    font-weight: bolder;
+  }
+
   header .top-bar #menu-button {
-    display: none;
+    display: inline-block;
+    z-index: 99999999999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0.75em;
+    border: 1px solid #020000;
   }
 
   #slider {
@@ -149,7 +170,7 @@ nav a.nav-item:visited {
     color: #ffffff;
     height: 300px;
     width: 60%;
-    padding: 1em 2em;
+    padding: 0.75em 1em;
     font-weight: bold;
   }
 
@@ -166,7 +187,7 @@ nav a.nav-item:visited {
 
   .clear-button {
     border: 1px solid #ffffff;
-    padding: 0.5em 1em;
+    padding: 0.4em 0.75em;
     color: #ffffff;
     cursor: pointer;
   }
@@ -202,15 +223,15 @@ nav a.nav-item:visited {
   }
 
   .large-text {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   .medium-text {
-    font-size: 2em;
+    font-size: 1em;
   }
 
   .small-text {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 
   .text-center {
@@ -234,12 +255,12 @@ nav a.nav-item:visited {
   }
 
   .text-underline-base {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.4em;
     border-bottom: 1px solid #ecdcb4;
   }
 
   .text-underline-dark {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.4em;
     border-bottom: 1px solid #020000;
   }
 
@@ -254,7 +275,7 @@ nav a.nav-item:visited {
   }
 
   .accordion {
-    margin: 0.5em auto;
+    margin: 0.4em auto;
     width: 80%;
     border: 1px solid #ecdcb4;
   }
@@ -264,14 +285,13 @@ nav a.nav-item:visited {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em;
+    padding: 0.4em;
   }
 
   .accordion_body {
     height: 0;
     overflow: hidden;
     text-align: left;
-    padding: 0.5em;
   }
 
   ul {
@@ -290,26 +310,25 @@ nav a.nav-item:visited {
 
   .accordion-expand {
     animation: expandAccordion 0.2s linear 0s 1 forwards !important;
-    padding: 0.5em;
   }
 
   section {
-    padding: 2em 0;
+    padding: 1em 0;
     margin: 0 auto;
     text-align: center;
   }
 
   section > p.intro,
 section > p {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin: 0 auto;
     width: 60%;
-    padding: 1em;
+    padding: 0.75em;
   }
 
   .container {
-    width: calc(100% - 2 * 4em);
-    margin: 4em auto;
+    width: calc(100% - 2 * 2em);
+    margin: 2em auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -318,8 +337,8 @@ section > p {
   }
 
   .container article {
-    margin-top: 4em;
-    width: calc(80% - 2 * 2em);
+    margin-top: 2em;
+    width: calc(80% - 2 * 1em);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -327,19 +346,19 @@ section > p {
   }
 
   .container article img {
-    width: 360px;
+    width: 90%;
   }
 
   .container article div.para {
     text-align: justify;
-    padding-left: 2em;
+    padding-left: 1em;
   }
 
   .container article div.para a.more {
     color: #ecdcb4;
     background-color: #020000;
     text-decoration: none;
-    padding: 0.5em 1em;
+    padding: 0.4em 0.75em;
   }
 
   .container article div.para a.more:hover {
@@ -349,7 +368,9 @@ section > p {
 
   .card-overlay,
 .card {
-    height: 300px;
+    height: auto;
+    min-height: 240px;
+    max-width: 494px;
   }
 
   .card {
@@ -357,8 +378,8 @@ section > p {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 2em auto;
-    width: 360px;
+    margin: 1em auto;
+    width: 100%;
     box-shadow: 5px, 10px, 3px, 5px, #020000, initial !important;
   }
 
@@ -378,12 +399,12 @@ section > p {
     color: #020000;
   }
 
-  .card-overlay {
+  .card > div.card-overlay {
     z-index: 100;
-    width: 360px;
     position: absolute;
     background-color: #020000;
-    opacity: 0.4;
+    opacity: 0.5;
+    width: 83% !important;
   }
 
   .card > div.data {
@@ -436,9 +457,9 @@ section > p {
   }
 
   form {
-    width: 60%;
+    width: 90%;
     border: 1px solid #020000;
-    padding: 2em;
+    padding: 1em;
   }
 
   .form-group {
@@ -450,22 +471,22 @@ section > p {
   }
 
   .form-group label {
-    margin: 1em 0;
+    margin: 0.75em 0;
     font-weight: bold;
   }
 
   .form-group .form-control {
-    width: calc(100% - 1em);
-    padding: 0.5em;
+    width: calc(100% - 0.75em);
+    padding: 0.4em;
   }
 
   .form-group > select.form-control option {
-    padding: 0.5em;
+    padding: 0.4em;
   }
 
   .form-group input[type=submit] {
-    margin: 1em 0;
-    padding: 0.5em 1em;
+    margin: 0.75em 0;
+    padding: 0.4em 0.75em;
     border: 0px;
     cursor: pointer;
   }
@@ -479,13 +500,17 @@ section > p {
   footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 2em;
-    width: calc(100% - (2 * 2em));
+    padding: 1em;
+    width: calc(100% - (2 * 1em));
     background-color: #020000;
     color: #ecdcb4;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+  }
+
+  footer > div {
+    margin: 0.75em;
   }
 
   footer nav {
@@ -496,7 +521,7 @@ section > p {
   }
 
   footer nav a.nav-item {
-    padding: 0.5em;
+    padding: 0.4em;
   }
 
   footer nav a.nav-item:hover {
@@ -554,6 +579,14 @@ section > p {
       display: none;
     }
   }
+  @keyframes stretchDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: auto;
+    }
+  }
   @font-face {
     font-family: Poiret-one;
     src: url(PoiretOne-Regular.ttf);
@@ -561,4 +594,4 @@ section > p {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=mobile.css.map */
