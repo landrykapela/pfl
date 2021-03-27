@@ -10,6 +10,7 @@
   $mediumMargin: 2em;
   $smallMargin: 1em;
   $verySmallMargin: 0.5em;
+  $font: "Poiret-one", sans-serif;
 
   @mixin shadow(
     $h-offset: 10px,
@@ -35,7 +36,11 @@
     text-align: center;
     color: $darkColor;
     padding: 0;
-    font-family: "Poiret-one", sans-serif;
+    font-family: $font;
+  }
+  a.nav-item .focus {
+    background-color: $baseColor;
+    color: $darkColor;
   }
   .active {
     display: block;
@@ -85,15 +90,15 @@
     padding: $verySmallMargin;
   }
   header .top-bar img.logo {
-    width: 200px;
-    height: 120px;
+    width: 240px;
+    height: 140px;
   }
   header .top-bar nav {
     @include flex(row, space-evenly, center);
     padding: $mediumMargin;
   }
   header .top-bar nav a.nav-item {
-    margin: $verySmallMargin $smallMargin;
+    margin: $verySmallMargin;
     padding: $verySmallMargin;
     font-weight: bold;
   }
@@ -116,7 +121,7 @@
     height: 500px;
     margin: 0 auto;
     position: absolute;
-    top: 140px;
+    top: 145px;
     // animation: slideshows;
     // animation-duration: 60s;
     // // animation-timing-function: linear;
@@ -362,12 +367,12 @@
   #health-insurance,
   #loan-insurance,
   #life-insurance,
-  #business-insurance {
+  #travel-insurance {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #business-insurance {
-    background-image: url(../img/business.webp);
+  #travel-insurance {
+    background-image: url(../img/travel.webp);
   }
   #life-insurance {
     background-image: url(../img/life-insurance.webp);
@@ -401,9 +406,13 @@
   .form-group .form-control {
     width: calc(100% - #{$smallMargin});
     padding: $verySmallMargin;
+    font-family: $font;
   }
   .form-group > select.form-control option {
     padding: $verySmallMargin;
+    font-family: $font;
+    font-weight: bold;
+    font-size: 1.2rem;
   }
   .form-group input[type="submit"] {
     margin: $smallMargin 0;
@@ -440,6 +449,24 @@
     color: $white;
   }
 
+  //standard links
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $baseColor;
+  }
+  .clear-button a:hover {
+    color: $darkColor;
+  }
+  #feedback {
+    // position: fixed;
+    // top: 0;
+    padding: $smallMargin;
+    width: calc(100% - #{$mediumMargin});
+    background-color: $baseColorTrans;
+    border: 1px solid $darkColor;
+  }
   //animations
   @keyframes expandAccordion {
     from {

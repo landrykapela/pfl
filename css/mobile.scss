@@ -48,7 +48,7 @@
     margin: 0 auto;
     width: 90%;
     position: relative;
-    @include flex(row, space-between, center);
+    @include flex(row, space-between, flex-end);
 
     height: 500px;
   }
@@ -63,9 +63,12 @@
     color: $darkColor;
     padding: $verySmallMargin;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    text-align: center;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     z-index: 10000;
   }
   .controls #control-left:hover,
@@ -88,7 +91,7 @@
     height: auto;
   }
   header .top-bar img.logo {
-    width: 30%;
+    width: 180px;
     height: auto;
     margin: 0 auto;
   }
@@ -138,15 +141,7 @@
     height: 500px;
     margin: 0 auto;
     position: absolute;
-    top: 140px;
-    // animation: slideshows;
-    // animation-duration: 60s;
-    // // animation-timing-function: linear;
-    // animation-timing-function: ease-in;
-    // animation-fill-mode: backwards;
-    // animation-delay: 0s;
-    // animation-iteration-count: infinite;
-    // background-image: url(../img/family.webp);
+    top: 110px;
   }
   #slider .banner img {
     height: 500px;
@@ -191,22 +186,22 @@
   }
 
   #banner-life {
-    background-image: url(../img/family.webp);
+    background-image: url(../img/family_small.webp);
     // background-color: blue;
     // animation: slide 0.2s linear 3s forwards;
   }
   #banner-medical {
-    background-image: url(../img/medical-insurance.webp);
+    background-image: url(../img/medical-insurance_small.webp);
     // background-color: red;
     // animation: slide 0.2s linear 3s forwards;
   }
   #banner-car {
-    background-image: url(../img/car-insurance.webp);
+    background-image: url(../img/car-insurance_small.webp);
     // background-color: green;
     // animation: slide 0.2s linear 3s forwards;
   }
   #banner-property {
-    background-image: url(../img/property-insurance.webp);
+    background-image: url(../img/property-insurance_small.webp);
   }
   .base-color-bg {
     background-color: $baseColor;
@@ -387,12 +382,12 @@
   #health-insurance,
   #loan-insurance,
   #life-insurance,
-  #business-insurance {
+  #travel-insurance {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  #business-insurance {
-    background-image: url(../img/business.webp);
+  #travel-insurance {
+    background-image: url(../img/travel.webp);
   }
   #life-insurance {
     background-image: url(../img/life-insurance.webp);
@@ -466,6 +461,24 @@
     color: $white;
   }
 
+  //standard links
+  a,
+  a:visited,
+  a:hover {
+    text-decoration: none;
+    color: $baseColor;
+  }
+  .clear-button a:hover {
+    color: $darkColor;
+  }
+  #feedback {
+    // position: fixed;
+    // top: 0;
+    padding: $smallMargin;
+    width: calc(100% - #{$mediumMargin});
+    background-color: $baseColorTrans;
+    border: 1px solid $darkColor;
+  }
   //animations
   @keyframes expandAccordion {
     from {

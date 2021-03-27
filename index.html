@@ -4,7 +4,7 @@
     <title>PFL Insurance Brokers</title>
     <meta
       name="description"
-      content="At PFL Insurance, we work hard to provide you with the best experience liasing with your insurer. We dedicate our resources just to make sure you get the best cover policy."
+      content="At PFL Insurance, we work hard to provide you with the best experience liaising with your insurer. We dedicate our resources just to make sure you get the best cover policy."
     />
     <meta
       name="keyword"
@@ -12,16 +12,38 @@
     />
     <meta name="charset" content="utf-8" />
     <meta name="author" content="Landry Kapela" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="img/favicon.png" rel="icon" />
-    <link href="css/main.css" rel="stylesheet" />
-    <link href="css/mobile.css" rel="stylesheet" />
+    <!-- <link
+      href="css/main.css"
+      rel="stylesheet"
+      media="screen and (min-width:769px)"
+    />
+    <link
+      href="css/mobile.css"
+      rel="stylesheet"
+      media="screen and (max-width:768px)"
+    /> -->
   </head>
   <body>
+    <script>
+      window.addEventListener("load", () => {
+        console.log("width: ", window.innerWidth);
+        var link = document.createElement("link");
+        if (window.screen.width < 769) {
+          link.href = "css/mobile.css";
+        } else {
+          link.href = "css/main.css";
+        }
+
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+      });
+    </script>
     <header>
       <div class="top-bar" id="home">
         <div>
-          <img class="logo" src="img/logo.webp" alt="PFL Insurance logo" />
+          <img class="logo" src="img/logo_.webp" alt="PFL Insurance logo" />
         </div>
         <span id="menu-button" class="large-text">&darr;</span>
         <nav id="top-nav">
@@ -30,6 +52,7 @@
           <a class="nav-item" href="products.html">Products</a>
           <a class="nav-item" href="partners.html">Partners</a>
           <a class="nav-item" href="#contact">Contacts</a>
+          <a class="nav-item focus" href="order.html">Order Now</a>
         </nav>
       </div>
       <div id="slider">
@@ -106,37 +129,49 @@
           <div class="card-overlay"></div>
 
           <p>Motor Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <div class="clear-button">
+            <a href="order.html?policy=motor">Order Now</a>
+          </div>
         </div>
         <div class="card" id="fire-accident">
           <div class="card-overlay"></div>
 
           <p>Fire Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <div class="clear-button">
+            <a href="order.html?policy=fire">Order Now</a>
+          </div>
         </div>
         <div class="card" id="health-insurance">
           <div class="card-overlay"></div>
 
           <p>Medical Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <div class="clear-button">
+            <a href="order.html?policy=individualmedical">Order Now</a>
+          </div>
         </div>
         <div class="card" id="loan-insurance">
           <div class="card-overlay"></div>
 
           <p>Credit Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <div class="clear-button">
+            <a href="order.html?policy=credit">Order Now</a>
+          </div>
         </div>
-        <div class="card" id="business-insurance">
+        <div class="card" id="travel-insurance">
           <div class="card-overlay"></div>
 
-          <p>Business Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <p>Travel Insurance</p>
+          <div class="clear-button">
+            <a href="order.html?policy=travel">Order Now</a>
+          </div>
         </div>
         <div class="card" id="life-insurance">
           <div class="card-overlay"></div>
 
           <p>Life Insurance</p>
-          <div class="clear-button">Order Now</div>
+          <div class="clear-button">
+            <a href="order.html?policy=grouplife">Order Now</a>
+          </div>
         </div>
       </div>
       <p class="medium-text">
@@ -218,6 +253,7 @@
           <a class="nav-item" href="about.html">About</a>
           <a class="nav-item" href="products.html">Products</a>
           <a class="nav-item" href="partners.html">Partners</a>
+          <a class="nav-item" href="order.html">Order Now</a>
         </nav>
       </div>
       <div class="text-left">

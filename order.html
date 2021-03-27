@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PFL Insurance Brokers - Our Partners</title>
+    <title>PFL Insurance Brokers</title>
     <meta
       name="description"
-      content="At PFL Insurance, we work hard to provide you with the best experience liasing with your insurer. We dedicate our resources just to make sure you get the best cover policy."
+      content="At PFL Insurance, we work hard to provide you with the best experience liaising with your insurer. We dedicate our resources just to make sure you get the best cover policy."
     />
     <meta
       name="keyword"
@@ -36,108 +36,62 @@
           <a class="nav-item" href="index.html">Home</a>
           <a class="nav-item" href="about.html">About</a>
           <a class="nav-item" href="products.html">Products</a>
-          <a class="nav-item active" href="#home">Partners</a>
+          <a class="nav-item" href="partners.html">Partners</a>
           <a class="nav-item" href="index.html#contact">Contacts</a>
-          <a class="nav-item focus" href="order.html">Order Now</a>
+          <a class="nav-item active" href="#home">Order Now</a>
         </nav>
       </div>
-      <!-- <div id="slider">
-        <div class="banner active" id="banner-life">
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="medium-text"
-              >Your future is safe with our life policy</span
-            >
-            <div class="clear-button" id="button-life">Get Info</div>
-          </div>
-        </div>
-        <div class="banner hidden" id="banner-car">
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="medium-text"
-              >Get the best cover policies for your automobile</span
-            >
-            <div class="clear-button" id="button-car">Talk to our experts</div>
-          </div>
-        </div>
-        <div class="banner hidden" id="banner-medical">
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="medium-text"
-              >We care for your health so you can stay happy</span
-            >
-            <div class="clear-button" id="button-medical">Be Covered</div>
-          </div>
-        </div>
-        <div class="banner hidden" id="banner-property">
-          <div class="overlay"></div>
-          <div class="content">
-            <span class="medium-text">Insure your property and assets</span>
-            <div class="clear-button" id="button-property">Know More...</div>
-          </div>
-        </div>
-      </div>
-      <div class="controls">
-        <span id="control-left"><</span>
-        <span id="control-right">></span>
-      </div> -->
     </header>
-    <section>
-      <span class="medium-text">Page Still in development</span>
-      <div class="container">
-        <!-- <div class="card" id="card-accident">
-          <div class="card-overlay"></div>
 
-          <p>Motor Insurance</p>
-          <div class="clear-button">Order Now</div>
-        </div>
-        <div class="card" id="fire-accident">
-          <div class="card-overlay"></div>
-
-          <p>Fire Accidents</p>
-          <div class="clear-button">Order Now</div>
-        </div>
-        <div class="card" id="health-insurance">
-          <div class="card-overlay"></div>
-
-          <p>Medical Insurance</p>
-          <div class="clear-button">Order Now</div>
-        </div>
-        <div class="card" id="loan-insurance">
-          <div class="card-overlay"></div>
-
-          <p>Loan Insurance</p>
-          <div class="clear-button">Order Now</div>
-        </div>
-        <div class="card" id="business-insurance">
-          <div class="card-overlay"></div>
-
-          <p>Business Insurance</p>
-          <div class="clear-button">Order Now</div>
-        </div>
-        <div class="card" id="life-insurance">
-          <div class="card-overlay"></div>
-
-          <p>Life Insurance</p>
-          <div class="clear-button">Order Now</div>
-        </div> -->
-      </div>
-    </section>
     <section class="base-color-bg" id="contact">
-      <!-- <h2>Talk to Our Experts</h2>
+      <span id="feedback" class="hidden"></span>
+      <h2>
+        Please select the insurance product you want and fill the form to
+        proceed
+      </h2>
       <div class="container">
-        <form>
+        <form id="order-form" method="POST">
           <div class="form-group">
             <label for="policy">Select Policy</label>
             <select id="policy" name="policy" class="form-control">
-              <option>Motor Insurance</option>
-              <option>Medical Insurance</option>
-              <option>Property Insurance</option>
-              <option>Life Insurance</option>
-              <option>Fire Insurance</option>
-              <option>Loan Insurance</option>
-              <option>Business Insurance</option>
+              <option value="credit">Credit Insurance</option>
+              <option value="motor">Motor Insurance</option>
+              <option value="fire">Fire Insurance</option>
+              <option value="money">Money Insurance</option>
+              <option value="burglary">Burglary Insurance</option>
+              <option value="fidelity">Fidelity Guarantee</option>
+              <option value="marine">Marine Insurance</option>
+              <option value="engineering">
+                Engineering, Project Insurance
+              </option>
+              <option value="aviation">Aviation Insurance</option>
+              <option value="travel">Travel Insurance</option>
+              <option value="asset">Asset all Risk</option>
+              <option value="liability">Public and Product Liability</option>
+              <option value="speciality">
+                Speciality lines such as Directors and Officers Liability
+                Insurance, Professional Indemnity
+              </option>
+              <option value="groupmedical">Group Medical Insurance</option>
+              <option value="individualmedical">
+                Individual Medical Insurance
+              </option>
+              <option value="specialisedmedical">
+                Specialised and tailored medical products
+              </option>
+              <option value="grouplife">Group Life Insurance</option>
+              <option value="individuallife">Individual Life Insurance</option>
             </select>
+          </div>
+          <div class="form-group" id="insurance_value_gp">
+            <label for="insurance_value">Insurance Value (Tsh)</label>
+            <input
+              type="number"
+              id="insurance_value"
+              name="insurance_value"
+              placeholder="Enter the actual value of the object to insure..."
+              class="form-control"
+            />
           </div>
           <div class="form-group">
             <label for="name">Full Name</label>
@@ -191,23 +145,23 @@
             />
           </div>
         </form>
-      </div> -->
+      </div>
     </section>
     <footer>
       <div>
         <p>Quick Links</p>
         <nav id="nav-bottom">
-          <a class="nav-item" href="index.html#home">Home</a>
+          <a class="nav-item" href="index.html">Home</a>
           <a class="nav-item" href="about.html">About</a>
           <a class="nav-item" href="products.html">Products</a>
+          <a class="nav-item" href="#home">Order Now</a>
           <a class="nav-item" href="partners.html">Partners</a>
-          <a class="nav-item" href="order.html">Order Now</a>
         </nav>
       </div>
       <div class="text-left">
         <p>Address</p>
         <span
-          >Avocado street,KAWE-Mzimuni <br />Near TPDF Golf Club <br />P.O Box
+          >Avocado street,KAWE-Mzimuni,<br />Near TPDF Golf Club <br />P.O Box
           75391, Dar es Salaam <br />E-mail: info@pflinsurance.co.tz
           <br />Phone: +255 753 123 283</span
         >
@@ -222,5 +176,6 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/form_processor.js"></script>
   </body>
 </html>
