@@ -1,7 +1,8 @@
-@media all and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   $darkColor: #020000;
   $baseColor: #ecdcb4;
-  $baseColorTrans: #ecdcb4d8;
+  $baseColorTrans: #ecdcb48c;
+  $baseColorDark: #e2b239;
   $white: #ffffff;
   $largeText: 3rem;
   $mediumText: 1.2rem;
@@ -10,6 +11,8 @@
   $mediumMargin: 1em;
   $smallMargin: 0.75em;
   $verySmallMargin: 0.4em;
+  $font: "Poppins", sans-serif;
+  $fontLight: "Poppins-light", sans-serif;
 
   @mixin shadow(
     $h-offset: 10px,
@@ -35,7 +38,7 @@
     text-align: center;
     color: $darkColor;
     padding: 0;
-    font-family: "Poiret-one", sans-serif;
+    font-family: $font;
   }
   .active {
     display: block;
@@ -108,7 +111,7 @@
   header .top-bar nav a.nav-item {
     // margin: $verySmallMargin $smallMargin;
     padding: $smallMargin;
-    font-weight: bold;
+    // font-weight: bold;
     width: calc(100% - (2 * #{$smallMargin}));
   }
   nav a.nav-item,
@@ -127,7 +130,10 @@
     font-weight: bolder;
   }
   header .top-bar #menu-button {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     z-index: 99999999999;
     position: fixed;
     top: 0;
@@ -179,9 +185,9 @@
     color: $baseColor;
   }
   .clear-button {
-    border: 1px solid $white;
+    border: 1px solid $baseColorDark;
     padding: $verySmallMargin $smallMargin;
-    color: $white;
+    color: $baseColorDark;
     cursor: pointer;
   }
 
@@ -211,14 +217,19 @@
     background-color: $darkColor;
     color: $baseColor;
   }
-  .bold {
-    font-weight: bold;
+  .bold-text {
+    font-weight: bold !important;
   }
   .large-text {
     font-size: $largeText;
   }
   .medium-text {
     font-size: $mediumMargin;
+  }
+  .large-text,
+  .medium-text {
+    font-family: $fontLight;
+    font-weight: lighter;
   }
   .small-text {
     font-size: $smallText;
@@ -269,7 +280,7 @@
     height: 0;
     overflow: hidden;
     text-align: left;
-    // padding: $verySmallMargin;
+    padding: 0 $verySmallMargin;
   }
   ul {
     list-style: none;
@@ -285,7 +296,7 @@
   //accordion animation
   .accordion-expand {
     animation: expandAccordion 0.2s linear 0s 1 forwards !important;
-    // padding: $verySmallMargin;
+    padding: $verySmallMargin;
   }
   //sections
   section {
@@ -298,8 +309,7 @@
   section > p {
     font-size: $mediumText;
     margin: 0 auto;
-    width: 60%;
-    // font-weight: bold;
+    width: 80%;
     padding: $smallMargin;
   }
   // container
@@ -416,7 +426,7 @@
   }
   .form-group label {
     margin: $smallMargin 0;
-    font-weight: bold;
+    // font-weight: bold;
   }
   .form-group .form-control {
     width: calc(100% - #{$smallMargin});
@@ -424,6 +434,8 @@
   }
   .form-group > select.form-control option {
     padding: $verySmallMargin;
+    font-weight: normal;
+    font-size: 1.2rem;
   }
   .form-group input[type="submit"] {
     margin: $smallMargin 0;
@@ -466,7 +478,7 @@
   a:visited,
   a:hover {
     text-decoration: none;
-    color: $baseColor;
+    color: $baseColorDark;
   }
   .clear-button a:hover {
     color: $darkColor;
@@ -545,8 +557,15 @@
   }
   //font
   @font-face {
-    font-family: Poiret-one;
-    src: url(PoiretOne-Regular.ttf);
+    font-family: Poppins;
+    src: url(Poppins-Regular.ttf);
+    // font-weight: bold;
+    font-display: swap;
+  }
+  //font
+  @font-face {
+    font-family: Poppins-light;
+    src: url(Poppins-Thin.ttf);
     // font-weight: bold;
     font-display: swap;
   }
